@@ -84,7 +84,8 @@ int main(int argc, char* *argv) {
   /* Support 128x64 later */
   int SCREEN_WIDTH = 64;
   int SCREEN_HEIGHT = 64;
-  SDL_Window *win = SDL_CreateWindow("Chippy",SDL_WINDOWPOS_CENTERED,SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT, 0);
+  int SCREEN_SCALE = 8;
+  SDL_Window *win = SDL_CreateWindow("Chippy",SDL_WINDOWPOS_CENTERED,SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH * SCREEN_SCALE, SCREEN_HEIGHT * SCREEN_SCALE, SDL_WINDOW_RESIZABLE);
   if (!win) {
     PMError("error creating window: %s\n",SDL_GetError());
     SDL_Quit();
